@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include <cstdlib>
+#include <time.h>
 using namespace std;
 
 //1
@@ -89,9 +91,25 @@ using namespace std;
 
 
 //7
-void losowanie(int szczesliwyNumerek) {
+//int iloscWylosowan;
+//void losowanie(int szczesliwyNumerek) {
+//    for (int i = 0; i < 10; i++) {
+//        int liczbaLosowa = (rand() % 10) + 1;
+//        if (liczbaLosowa == szczesliwyNumerek) {
+//            iloscWylosowan += 1;
+//        }
+//    }
+//}
 
+//8
+int parzysta(int n) {
+    return n / 2;
 }
+int nieparzysta(int n) {
+    return (n-1) / 2;
+}
+
+
 
 int main(){
     setlocale(LC_CTYPE, "polish");
@@ -159,8 +177,24 @@ int main(){
     cout << "Wynik silni: " << potega(n);*/
 
     //7
-    int szczesliwyNumerek;
-
+   /* int szczesliwyNumerek;
     cout << "Podaj szczęśliwy numerek: "<<endl;
     cin >> szczesliwyNumerek;
+    srand(time(NULL));
+    losowanie(szczesliwyNumerek);
+    cout << "Szcesliwy numerek pojawil sie " << iloscWylosowan << " razy";*/
+
+    //8
+    int wynik;
+    for (int i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+            wynik = parzysta(i);
+        }
+        else {
+            wynik = nieparzysta(i);
+        }
+        cout << i << "   |   " << wynik << endl;
+    }
+
+    return 0;
 }
